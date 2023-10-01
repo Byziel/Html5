@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rewrite the Stars</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #0000ff, #000);
+            animation: backgroundAnimation 10s linear infinite alternate;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('stars.png') repeat top center;
+            animation: starsAnimation 20s linear infinite;
+        }
+
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to bottom, #0000ff, #000);
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            margin: 0 20px;
+            font-size: 20px;
+            position: relative;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #0000ff, #000);
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.3s;
+        }
+
+        .nav-link:hover::after {
+            transform: scaleX(1);
+        }
+
+        @keyframes backgroundAnimation {
+            0% {
+                background: linear-gradient(to bottom, #0000ff, #000);
+            }
+            100% {
+                background: linear-gradient(to bottom, #000, #ff0000);
+            }
+        }
+
+        @keyframes starsAnimation {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 1000px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="stars"></div>
+    </div>
+    <div class="nav-bar">
+        <a href="pagina-musicas.html" class="nav-link">Músicas</a>
+        <a href="pagina-galeria.html" class="nav-link">Galeria</a>
+        <a href="pagina-redes-sociais.html" class="nav-link">Redes Sociais</a>
+    </div>
+    <div class="content">
+        <h1>Rewrite the Stars🌟</h1>
+        <p>"Cause you're the one I was meant to find"</p>
+        <audio controls>
+            <source src="Stars.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+</body>
+</html>
